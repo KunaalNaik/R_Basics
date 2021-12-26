@@ -168,4 +168,3 @@ summary(logistic_model)
 
 
 
-
