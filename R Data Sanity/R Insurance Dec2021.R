@@ -140,6 +140,6 @@ g <- ggplot(data, aes(injury_claim)) + geom_histogram()
 g
 
 
-##### 
+##### Check Missing Values
 
 sum(is.na(data))
