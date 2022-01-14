@@ -1,0 +1,4 @@
+Age	Customer	Income	Location
+30	A	1200	A1
+32	B	1333	A2
+33		Missing	NA
