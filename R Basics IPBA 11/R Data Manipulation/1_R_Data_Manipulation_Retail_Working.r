@@ -70,19 +70,56 @@ retail[-"Total_Units"]
 retail$Total_Units <- NULL
 
 ### 3/ Sort
+numbers<-c(10,100,5,8)
+order(numbers)
+order(-numbers)
+
+#order the entire table
+retail[order(retail$Cost,decreasing=TRUE),]
+
+sort_cost<-retail[order(retail$Cost,decreasing=TRUE),]
+head(sort_cost)
+sorted<-retail[order(retail$Item_Category,retail$Revenue,decreasing=TRUE),]
+head(sorted)
 
 # Find Top Revenue Months - Order | ascending, descending | 1 col, 2 col
 
 
 ### 4/ Subsetting Data / Filtering with Conditions
+#Using logical operators
 
 # Find Rows with Cost > 10000
+retail$Cost<10000
+class(retail$Cost<10000)
+#retail[rows_subset_criteria,column_subset_criteria]
+retail[retail$Cost<10000,]
+retail[retail$Cost<10000,"Cost"]
+
+#Assign values to the sub-setted data, useful for cleaning data, treatming missing values
+retail_new<-retail
+summary(retail_new$Cost)
+retail_new[retail_new$Cost<10000,c("Cost", "Units_Sold")] <- 10000 #to each element subset 10000 is assigned
+summary(retail_new$Cost)
+retail_new$Units_Sold
 
 # Same condition using Which
+which(retail$Cost <10000)
+class(which(retail$Cost <10000))
+retail[which(retail$Cost<10000),]
 
 # Select Maximum Sales using Which
+which(retail$Cost == max(retail$Cost)) #, na.rm=TRUE
 
 # Find Row with Maximum Sales
+retail[which(retail$Cost == max(retail$Cost)),]
+#Similarly using which to subset columns
+retail_sub<- retail[,which(names(retail) %in% c("Month","Revenue"))]
+head(retail_sub)
+
+# And Condition
+
+# Or Condition
+
 
 ### 5/ Missing Values
 
