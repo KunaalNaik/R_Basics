@@ -23,6 +23,7 @@ product_details <- data.frame(product,total_price,color,quantity,
 
 #Understand the idea of StringsAsFactors
 product_details <- data.frame(product,total_price,color,quantity)
+product_details$product_new <- as.factor(product_details$product)
 
 product_details
 View(product_details)
@@ -66,13 +67,14 @@ str(retail)
 # Removes last columns
 retail[-10]
 retail[-"Total_Units"]
-
+#right to delete
 retail$Total_Units <- NULL
 
 ### 3/ Sort
 numbers<-c(10,100,5,8)
 order(numbers)
 order(-numbers)
+
 
 #order the entire table
 retail[order(retail$Cost,decreasing=TRUE),]
@@ -142,4 +144,3 @@ na_removed
 ### 7/ Aggregate
 
 # Aggregate Cost By Item_Category | aggregate -> data.frame | tapply -> array
-
