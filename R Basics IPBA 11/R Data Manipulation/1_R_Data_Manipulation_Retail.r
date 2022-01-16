@@ -1,6 +1,33 @@
 #Data Manipulaton with R
+#setwd("D:\\GitHub\\R_Basics\\R Basics IPBA 11\\R Data Manipulation")
 setwd("C:\\Users\\DELL\\OneDrive\\Documents\\Jigsaw Courses\\Courses\\R Basics\\R Basics IPBA 11\\R Data Manipulation")
 retail<-read.csv("retail_sales.csv")
+
+#Create Dataframes
+#Each column can be a different Data types. 
+#Consider the following vectors : 
+
+product=c("Bag","shoes","belt","belt")
+
+total_price=c(500,1000,150,10000)
+
+color=c("Blue","red","red","blue")
+
+quantity=c(5,2,3,4)
+
+#Create a dataframe
+product_details <- data.frame(product,total_price,color,quantity,
+                              stringsAsFactors=FALSE)
+
+?data.frame
+
+#Understand the idea of StringsAsFactors
+product_details <- data.frame(product,total_price,color,quantity)
+
+product_details
+View(product_details)
+
+class(product_details)
 
 ### 1/ Data Checks and Data Types
 # How to take a look at the dataset?
@@ -14,6 +41,7 @@ str(retail) #helps observe sample data with type of variable which 'summary' can
 summary(retail) 
 summary(retail$Item_Category) #difference between character and numeric summaries
 names(retail)
+colnames(retail)
 
 # Stick a Dataframe for multiple use
 attach(retail) 
@@ -27,12 +55,15 @@ head(cost)
 names(retail)
 
 
-### 2/ Adding/Deleting Columns
+### 2/ Adding/Deleting Columns (Feature Engineering)
 
 # Add a Column - Total Units
 
 
 # Delete - Total units
+# Removes last columns
+
+
 
 ### 3/ Sort
 
