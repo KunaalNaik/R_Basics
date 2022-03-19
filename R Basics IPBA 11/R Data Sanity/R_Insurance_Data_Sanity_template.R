@@ -20,30 +20,30 @@ library(summarytools)
 ##### Transition to ML
 # Hopefully Build a Log Reg
 
-##### References
+##### Referances
 # https://www.kaggle.com/rhythmcam/r-titanic-nn-80
 # Ref : https://statsandr.com/blog/descriptive-statistics-in-r/
 
 ##### Import & Clean
-setwd("D:\\GitHub\\R_Basics\\R Basics IPBA 11\\R Data Sanity")
+setwd("C:\\Users\\DELL\\OneDrive\\Documents\\Jigsaw Courses\\Courses\\R Basics\\R Data Sanity")
 
 #Data Import
 data <- read.csv("insurance_claims.csv")
 
 # Drop Features
 drop <- c("X_c39")
-data = data[,!(names(data) %in% drop)]=
+data = data[,!(names(data) %in% drop)]
 
 
 ##### Check Summary (summarytools)
-summary(data)
+#summary(data)
 
 #descr(data,
 #      headings = FALSE, # remove headings
 #      stats = "common" # most common descriptive statistics
 #)
 
-dfSummary(data)
+#dfSummary(data)
 
 
 
