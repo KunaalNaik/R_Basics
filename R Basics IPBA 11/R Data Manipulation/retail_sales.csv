@@ -1,26 +1,26 @@
-Supplier,City,Item_Category,Month, Cost ,  Revenue  , Unit_Price ,Units_Available,Units_Sold
-Bantam Books,Annapolis,Art & Architecture,Feb,38136,47670,105,655,454
-Bantam Books,Annapolis,Art & Architecture,Mar,11919,19866,51,291,388
-Bantam Books,Annapolis,Art & Architecture,Apr,2879,4112,14,541,298
-Bantam Books,Annapolis,Art & Architecture,May,99754,142506,305,302,468
-Bantam Books,Annapolis,Art & Architecture,Jun,1705,2436,21,1063,116
-Bantam Books,Annapolis,Art & Architecture,Aug,2883,4804,16,1211,306
-Bantam Books,Annapolis,Art & Architecture,Oct,39676,66126,155,1165,428
-Bantam Books,Annapolis,Art & Architecture,Dec,1561,2602,57,,46
-Bantam Books,Annapolis,Art & Architecture,Jan,2782,3974,14,84,289
-Bantam Books,Annapolis,Art & Architecture,May,,19936,51,207,394
-Bantam Books,Annapolis,Art & Architecture,Jun,1333,2221,16,1140,136
-Bantam Books,Annapolis,Art & Architecture,Jul,87891,,234,1322,469
-Bantam Books,Annapolis,Art & Architecture,Oct,4404,6292,13,1405,484
-Bantam Books,Annapolis,Art & Architecture,Dec,2804,4674,12,729,399
-Bantam Books,Annapolis,Business Administration,Aug,1830,3051,15,411,208
-Bantam Books,Annapolis,Business Administration,Sep,2247,3745,14,1293,274
-Bantam Books,Annapolis,Business Administration,Oct,9613,19227,69,280,280
-Bantam Books,Annapolis,Literature,Jun,32247,53744,132,413,406
-Bantam Books,Annapolis,Literature,Oct,7571,12618,38,1479,335
-Bantam Books,Annapolis,Literature,Nov,4738,7896,18,123,448
-Bantam Books,Annapolis,Literature,Jan,8915,14858,36,830,
-Bantam Books,Annapolis,Literature,Feb,4126,5158,15,272,341
-Bantam Books,Annapolis,Literature,May,3010,3762,13,567,285
-Bantam Books,Annapolis,Sports & Health,Jan,2413,4022,12,920,325
-Bantam Books,Annapolis,Sports & Health,Feb,70221,117035,438,1391,267
+Supplier,City,Item_Category,Month, Cost ,  Revenue  , Unit_Price ,Units_Available,Units_Sold,Random_Num,Random_Binary
+Bantam Books,Annapolis,Art & Architecture,Feb,38136,47670,105,655,454,3,1
+Bantam Books,Annapolis,Art & Architecture,Mar,11919,19866,51,291,388,5,0
+Bantam Books,Annapolis,Art & Architecture,Apr,2879,4112,14,541,298,1,1
+Bantam Books,Annapolis,Art & Architecture,May,99754,142506,305,302,468,2,0
+Bantam Books,Annapolis,Art & Architecture,Jun,1705,2436,21,1063,116,5,1
+Bantam Books,Annapolis,Art & Architecture,Aug,2883,4804,16,1211,306,5,1
+Bantam Books,Annapolis,Art & Architecture,Oct,39676,66126,155,1165,428,4,1
+Bantam Books,Annapolis,Art & Architecture,Dec,1561,2602,57,,46,2,1
+Bantam Books,Annapolis,Art & Architecture,Jan,2782,3974,14,84,289,4,0
+Bantam Books,Annapolis,Art & Architecture,May,,19936,51,207,394,3,0
+Bantam Books,Annapolis,Art & Architecture,Jun,1333,2221,16,1140,136,2,0
+Bantam Books,Annapolis,Art & Architecture,Jul,87891,,234,1322,469,2,0
+Bantam Books,Annapolis,Art & Architecture,Oct,4404,6292,13,1405,484,4,0
+Bantam Books,Annapolis,Art & Architecture,Dec,2804,4674,12,729,399,5,0
+Bantam Books,Annapolis,Business Administration,Aug,1830,3051,15,411,208,5,1
+Bantam Books,Annapolis,Business Administration,Sep,2247,3745,14,1293,274,5,0
+Bantam Books,Annapolis,Business Administration,Oct,9613,19227,69,280,280,3,0
+Bantam Books,Annapolis,Literature,Jun,32247,53744,132,413,406,2,1
+Bantam Books,Annapolis,Literature,Oct,7571,12618,38,1479,335,5,0
+Bantam Books,Annapolis,Literature,Nov,4738,7896,18,123,448,3,1
+Bantam Books,Annapolis,Literature,Jan,8915,14858,36,830,,1,1
+Bantam Books,Annapolis,Literature,Feb,4126,5158,15,272,341,3,1
+Bantam Books,Annapolis,Literature,May,3010,3762,13,567,285,1,1
+Bantam Books,Annapolis,Sports & Health,Jan,2413,4022,12,920,325,4,0
+Bantam Books,Annapolis,Sports & Health,Feb,70221,117035,438,1391,267,3,1

@@ -1,6 +1,6 @@
-#Data Manipulaton with R
-#setwd("D:\\GitHub\\R_Basics\\R Basics IPBA 11\\R Data Manipulation")
-setwd("C:\\Users\\DELL\\OneDrive\\Documents\\Jigsaw Courses\\Courses\\R Basics\\R Basics IPBA 11\\R Data Manipulation")
+#Data Manipulation with R
+setwd("D:\\GitHub\\R_Basics\\R Basics IPBA 11\\R Data Manipulation")
+#setwd("C:\\Users\\DELL\\OneDrive\\Documents\\Jigsaw Courses\\Courses\\R Basics\\R Basics IPBA 11\\R Data Manipulation")
 retail<-read.csv("retail_sales.csv")
 
 #Create Dataframes
@@ -66,7 +66,7 @@ str(retail)
 # Delete - Total units
 # Removes last columns
 retail[-10]
-retail[-"Total_Units"]
+
 #right to delete
 retail$Total_Units <- NULL
 
