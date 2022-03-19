@@ -1,4 +1,4 @@
-#Data Manipulation with R
+#Data Manipulaton with R
 #setwd("D:\\GitHub\\R_Basics\\R Basics IPBA 11\\R Data Manipulation")
 setwd("C:\\Users\\DELL\\OneDrive\\Documents\\Jigsaw Courses\\Courses\\R Basics\\R Basics IPBA 11\\R Data Manipulation")
 retail<-read.csv("retail_sales.csv")
@@ -74,11 +74,19 @@ names(retail)
 
 # Find Rows with Cost > 10000
 
+
+
 # Same condition using Which
+
+
 
 # Select Maximum Sales using Which
 
+
+
 # Find Row with Maximum Sales
+
+
 
 ### 5/ Missing Values
 
@@ -92,7 +100,7 @@ na_removed<-sales[which(!is.na(sales))]
 which(!is.na(sales))
 na_removed
 
-# Remove Missing Values - colsums + is.na
+# Remove Missing Values - columns + is.na
 
 ### 6/ Get Unique Values in Columns
 
