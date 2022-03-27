@@ -154,15 +154,15 @@ g
 ##### Check Missing Values
 
 ### Categorical - Identify and Replace
-## Impute property_damage
-data <- data %>% mutate(property_damage = if_else(property_damage == "?", "missing", property_damage)) 
+## Impute police_report_available
+data <- data %>% mutate(police_report_available = ifelse(police_report_available == "?", "missing", police_report_available)) 
 
 # If there are Nulls's 
-data <- data %>% mutate(police_report_available = is.na(police_report_available))
+data <- data %>% mutate(property_damage = ifelse(is.na(property_damage), "No", property_damage))
 
 ### Numerical - Identify and Replace
 ## Impute property_damage
-data <- data %>% mutate(umbrella_limit = if_else(umbrella_limit == 0, mean(umbrella_limit), umbrella_limit)) 
+data <- data %>% mutate(umbrella_limit = ifelse(umbrella_limit == 0, mean(umbrella_limit), umbrella_limit)) 
 
 # If there are Nulls's 
 data <- data %>% mutate(police_report_available = is.na(umbrella_limit, mean(umbrella_limit)))
