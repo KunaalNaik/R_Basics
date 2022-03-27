@@ -158,7 +158,7 @@ g
 data <- data %>% mutate(police_report_available = ifelse(police_report_available == "?", "missing", police_report_available)) 
 
 # If there are Nulls's 
-data <- data %>% mutate(property_damage = ifelse(is.na(property_damage), "No", property_damage))
+data <- data %>% mutate(property_damage = ifelse(property_damage == "", "No", property_damage))
 
 ### Numerical - Identify and Replace
 ## Impute property_damage
@@ -166,4 +166,4 @@ data <- data %>% mutate(umbrella_limit = ifelse(umbrella_limit == 0, mean(umbrel
 
 # If there are Nulls's 
 data <- data %>% mutate(police_report_available = is.na(umbrella_limit, mean(umbrella_limit)))
-
+data
