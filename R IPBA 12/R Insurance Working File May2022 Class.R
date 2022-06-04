@@ -25,7 +25,7 @@ library(summarytools)
 # Ref : https://statsandr.com/blog/descriptive-statistics-in-r/
 
 ##### Import & Clean
-setwd("C:\\Users\\DELL\\OneDrive\\Documents\\Jigsaw Courses\\Courses\\R Basics\\R Data Sanity")
+setwd("D:\\GitHub\\R_Basics\\R IPBA 12")
 
 #Data Import
 data <- read.csv("insurance_claims.csv")
@@ -36,15 +36,14 @@ data = data[,!(names(data) %in% drop)]
 
 
 ##### Check Summary (summarytools)
-#summary(data)
+summary(data)
 
-#descr(data,
-#      headings = FALSE, # remove headings
-#      stats = "common" # most common descriptive statistics
-#)
+descr(data,
+      headings = FALSE, # remove headings
+      stats = "common" # most common descriptive statistics
+)
 
-#dfSummary(data)
-
+dfSummary(data)
 
 
 ##### Add Features
@@ -75,10 +74,10 @@ data = data[,!(names(data) %in% drop)]
 
 
 # 2/ Set the Chart Canvas with Required Features - For Categorical just use one Feature in aes()
-
+g <- ggplot(data, aes(policy_state)) 
 
 # 3/ Then add a Bar Plot
-
+g + geom_bar()
 
 # Other Type of Plots
 mosaicplot(table(data$policy_state, data$fraud_reported),
@@ -118,9 +117,31 @@ mosaicplot(table(data$policy_state, data$fraud_reported),
 
 ### age
 # 1/ Set the Chart Canvas with Required Features - For Categorical just use one Feature in aes()
-
+g <- ggplot(data, aes(age))
 
 # 2/ Then add a Bar Plot
+g + geom_histogram(bins = 10)
+
+### months_as_customer
+# 1/ Set the Chart Canvas with Required Features - For Categorical just use one Feature in aes()
+g <- ggplot(data, aes(months_as_customer))
+
+# 2/ Then add a Bar Plot
+g + geom_histogram(bins = 10)
+
+### age - outlier
+# 1/ Set the Chart Canvas with Required Features - For Categorical just use one Feature in aes()
+g <- ggplot(data, aes(age))
+
+# 2/ Then add a Bar Plot
+g + geom_boxplot()
+
+### months_as_customer
+# 1/ Set the Chart Canvas with Required Features - For Categorical just use one Feature in aes()
+g <- ggplot(data, aes(months_as_customer))
+
+# 2/ Then add a Bar Plot
+g + geom_boxplot()
 
 
 ### policy_annual_premium
