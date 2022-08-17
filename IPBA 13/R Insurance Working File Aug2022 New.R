@@ -54,10 +54,33 @@ chisq.test(data$insured_occupation, data$fraud_reported)
 
 chisq.test(data$insured_education_level, data$fraud_reported)
 
+chisq.test(data$insured_hobbies, data$fraud_reported)
+
+# Variable that is Categorical but Numeric Data Type
+
+#Conversion 
+data$umbrella_limit <- as.factor(data$umbrella_limit)
+chisq.test(data$umbrella_limit, data$fraud_reported)
+
 # Numerical
+ggplot(data, aes(x=months_as_customer, y=age)) + geom_point()
 cor(data$age, data$months_as_customer)
 
 t.test(data$age, data$months_as_customer)
+
+# Numerical to Categorical
+summary(aov(data = data, age ~ as.factor(fraud_reported)))
+
+boxplot(data$age~factor(data$fraud_reported))
+
+summary(aov(data = data, age ~ as.factor(auto_make)))
+
+boxplot(data$age~factor(data$auto_make))
+
+## Logistic Regression
+
+lr <- glm(factor(fraud_reported) ~ age + auto_make + insured_hobbies + months_as_customer, data = data,family = "binomial")
+summary(lr)
 
 ##### Add Features
 
