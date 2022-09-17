@@ -107,7 +107,7 @@ g + geom_bar()
 
 ### policy_state
 # 1/ Convert Categorical feature As Factor
-
+data$policy_state <- as.factor(data$policy_state)
 
 # 2/ Set the Chart Canvas with Required Features - For Categorical just use one Feature in aes()
 g <- ggplot(data, aes(policy_state)) 
@@ -126,11 +126,11 @@ mosaicplot(table(data$policy_state, data$fraud_reported),
 
 ### policy_deductable
 # 1/ Convert Categorical feature As Factor
-
+data$policy_deductable <- as.factor(data$policy_deductable)
 
 # 2/ Set the Chart Canvas with Required Features - For Categorical just use one Feature in aes()
-
-
+g <- ggplot(data, aes(policy_deductable)) + geom_bar()
+g
 
 
 ### auto_make
@@ -153,10 +153,10 @@ mosaicplot(table(data$policy_state, data$fraud_reported),
 
 ### age
 # 1/ Set the Chart Canvas with Required Features - For Categorical just use one Feature in aes()
-
+g <- ggplot(data, aes(age)) 
 
 # 2/ Then add a Bar Plot
-
+g+ geom_histogram()
 
 ### months_as_customer
 # 1/ Set the Chart Canvas with Required Features - For Categorical just use one Feature in aes()
