@@ -84,11 +84,11 @@ summary(lr)
 
 ##### Add Features
 
-# 1/ Add Fraud Flag
-
+# 1/ Add Fraud_Flag
+data <- data %>% mutate(fraud_flag = ??)
 
 # 2/ Add Row Number
-
+data <- data %>% mutate(row_count = 1)
 
 
 
