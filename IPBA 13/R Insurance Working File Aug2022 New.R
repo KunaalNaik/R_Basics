@@ -85,7 +85,7 @@ summary(lr)
 ##### Add Features
 
 # 1/ Add Fraud_Flag
-data <- data %>% mutate(fraud_flag = ??)
+data <- data %>% mutate(fraud_flag = IF_ELSE(fraud_reported == "Y", 1, 0))
 
 # 2/ Add Row Number
 data <- data %>% mutate(row_count = 1)
@@ -95,13 +95,13 @@ data <- data %>% mutate(row_count = 1)
 ##### First Code - Plot Number of Frauds Chart 
 
 # 1/ Convert Categorical feature As Factor
-
+data$fraud_reported <- as.factor(data$fraud_reported)
 
 # 2/ Set the Chart Canvas with Required Features - For Categorical just use one Feature in aes()
-
+g <- ggplot(data, aes(fraud_reported))
 
 # 3/ Then add a Bar Plot
-
+g + geom_bar()
 
 ##### Categorical Features
 
