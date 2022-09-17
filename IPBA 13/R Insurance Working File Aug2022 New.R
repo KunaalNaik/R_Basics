@@ -156,14 +156,14 @@ g
 g <- ggplot(data, aes(age)) 
 
 # 2/ Then add a Bar Plot
-g+ geom_histogram()
+g+ geom_histogram(binwidth = 4)
 
 ### months_as_customer
 # 1/ Set the Chart Canvas with Required Features - For Categorical just use one Feature in aes()
-
+g <- ggplot(data, aes(months_as_customer)) 
 
 # 2/ Then add a Bar Plot
-
+g + geom_histogram(bins = 50) 
 
 ### age - outlier
 # 1/ Set the Chart Canvas with Required Features - For Categorical just use one Feature in aes()
@@ -174,20 +174,20 @@ g+ geom_histogram()
 
 ### months_as_customer
 # 1/ Set the Chart Canvas with Required Features - For Categorical just use one Feature in aes()
-
+g <- ggplot(data, aes(age)) 
 
 # 2/ Then add a Bar Plot
-
+g + geom_boxplot()
 
 
 ### policy_annual_premium
 # 1/ Set the Chart Canvas with Required Features - For Categorical just use one Feature in aes()
 
-
+g <- ggplot(data, aes(policy_annual_premium)) 
 
 ### property_claim
 # 1/ Set the Chart Canvas with Required Features - For Categorical just use one Feature in aes()
-
+g + geom_boxplot()
 
 
 ### injury_claim
