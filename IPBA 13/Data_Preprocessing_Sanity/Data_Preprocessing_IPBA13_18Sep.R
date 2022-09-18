@@ -18,7 +18,7 @@ data <- data %>% mutate(across(where(is.character), ~ na_if(.,"")))
 ##### Convert String to Numerical
 # experience
 data <- data %>% mutate(experience = ifelse(experience == ">20", 20, experience))
-data <- #Write here
+data <- data %>% mutate(experience = ifelse(experience == "<1", 0, experience))
 
 # Convert to Numeric
 data$experience <- as.numeric(data$experience)
@@ -27,16 +27,16 @@ data$experience
 
 ##### Check Summary for Pre-processing (DataExplorer)
 ### Look For Numeric, Categorical Features & Missing Values %
-#write here
+plot_intro(data)
 
-##### EDA 
+##### Data Preprocessing 
 
 ### Identify Missing Value Columns
 ### Old Way
 colSums(is.na(data)) / nrow(data)
 
 ### Better Way 
-#write here
+plot_missing(data)
 
 
 ## Treat Missing Values - Numerical
@@ -45,41 +45,52 @@ colSums(is.na(data)) / nrow(data)
 #write here
 
 # Treat city_development_index
-data$city_development_index <- ifelse(is.na(data$city_development_index), ave(data$city_development_index, FUN = function(x) mean(x, na.rm = TRUE )), data$city_development_index)
+data$city_development_index <- ifelse(is.na(data$city_development_index)
+                                      , ave(data$city_development_index
+                                            , FUN = function(x) mean(x, na.rm = TRUE ))
+                                      , data$city_development_index)
 
 # Treat training_hours
-#write here
+data$training_hours <- ifelse(is.na(data$training_hours)
+                                      , ave(data$training_hours
+                                            , FUN = function(x) mean(x, na.rm = TRUE ))
+                                      , data$training_hours)
+
 
 # Treat experience
-#write here
-
+data$experience <- ifelse(is.na(data$experience)
+                              , ave(data$experience
+                                    , FUN = function(x) mean(x, na.rm = TRUE ))
+                              , data$experience)
+plot_missing(data)
 
 ## Treat Missing Values - Categorical 
 
 # Get all Categorical Column Names
-#write here
+plot_bar(data)
 
 # Treat gender
 data$gender <- ifelse(is.na(data$gender), "missing", data$gender)
 
 # Treat enrolled_university
-#write here
+data$enrolled_university <- ifelse(is.na(data$enrolled_university), "missing", data$enrolled_university)
 
 # Treat education_level
-#write here
+data$education_level <- ifelse(is.na(data$education_level), "missing", data$education_level)
 
 # Treat major_discipline
-#write here
+data$major_discipline <- ifelse(is.na(data$major_discipline), "missing", data$major_discipline)
 
 # Treat company_size
-#write here
+data$company_size <- ifelse(is.na(data$company_size), "missing", data$company_size)
 
 # Treat company_type
-#write here
+data$company_type <- ifelse(is.na(data$company_type), "missing", data$company_type)
 
 # Treat last_new_job
-#write here
+data$last_new_job <- ifelse(is.na(data$last_new_job), "missing", data$last_new_job)
 
+plot_missing(data)
 
 ## Transformation - Numerical
 # WHY
@@ -93,10 +104,10 @@ ggplot(data_long, aes(x = variable, y = value)) + geom_boxplot()
 data$city_development_index <- scale(data$city_development_index, center = TRUE, scale = TRUE)
 
 # Transformation training_hours
-#write here
+data$training_hours <- scale(data$training_hours, center = TRUE, scale = TRUE)
 
 # Transformation experience
-#write here
+data$experience <- scale(data$experience, center = TRUE, scale = TRUE)
 
 
 ## Outlier - Numerical
@@ -117,3 +128,5 @@ boxplot(data$training_hours)
 
 ##### Final Check for Missing Values
 plot_missing(data)
+
+plot_intro(data)
