@@ -1,3 +1,6 @@
+# Download 
+**Titanic.zip and use the R Code provided to answer questions**
+
 # Titanic
 
 In this competition your task is to predict whether a passenger was transported to an alternate dimension during the Spaceship Titanic's collision with the spacetime anomaly. 
