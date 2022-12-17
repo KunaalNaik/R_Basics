@@ -73,13 +73,14 @@ g
 
 ### policy_state
 # 1/ Convert Categorical feature As Factor
-
+data <- data %>% mutate(policy_state = as.factor(policy_state))
 
 # 2/ Set the Chart Canvas with Required Features - For Categorical just use one Feature in aes()
-
+g <- ggplot(data, aes(policy_state))
 
 # 3/ Then add a Bar Plot
-
+g <- g + geom_bar()
+g
 
 # Other Type of Plots
 mosaicplot(table(data$policy_state, data$fraud_reported),
@@ -88,15 +89,16 @@ mosaicplot(table(data$policy_state, data$fraud_reported),
            ylab = "Fraud" # label for y-axis
 )
 
-
+## Data Pipeline
+data <- data %>% mutate(fraud_reported = as.factor(fraud_reported)) %>% mutate(policy_state = as.factor(policy_state))
 
 ### policy_deductable
 # 1/ Convert Categorical feature As Factor
-
+data <- data %>% mutate(policy_deductable = as.factor(policy_deductable))
 
 # 2/ Set the Chart Canvas with Required Features - For Categorical just use one Feature in aes()
-
-
+g <- ggplot(data, aes(policy_deductable)) + geom_bar()
+g
 
 
 ### auto_make
@@ -119,20 +121,22 @@ mosaicplot(table(data$policy_state, data$fraud_reported),
 
 ### age
 # 1/ Set the Chart Canvas with Required Features - For Categorical just use one Feature in aes()
+g <- ggplot(data, aes(age)) + geom_histogram(binwidth = 10)
+g
 
-
-# 2/ Then add a Bar Plot
+# 2/ Then add a Histogram Plot
 
 
 ### policy_annual_premium
 # 1/ Set the Chart Canvas with Required Features - For Categorical just use one Feature in aes()
+g <- ggplot(data, aes(policy_annual_premium)) + geom_boxplot()
+g
 
-
-
+## https://statisticsglobe.com/draw-multiple-boxplots-in-one-graph-in-r
 ### property_claim
 # 1/ Set the Chart Canvas with Required Features - For Categorical just use one Feature in aes()
-
-
+g <- ggplot(data, aes(y= policy_annual_premium, x = policy_state)) + geom_boxplot()
+g
 
 ### injury_claim
 # 1/ Set the Chart Canvas with Required Features - For Categorical just use one Feature in aes()
