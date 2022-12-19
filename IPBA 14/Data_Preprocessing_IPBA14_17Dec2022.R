@@ -18,7 +18,7 @@ data <- data %>% mutate(across(where(is.character), ~ na_if(.,"")))
 ##### Convert String to Numerical
 # experience
 data <- data %>% mutate(experience = ifelse(experience == ">20", 20, experience))
-data <- #Write here
+#data <- #Write here
   
   # Convert to Numeric
   data$experience <- as.numeric(data$experience)
