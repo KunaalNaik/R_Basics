@@ -37,6 +37,15 @@ attrition_dept_plot <- ggplot(attrition_percentage, aes(x = Department, y = Attr
 # Display the plot
 print(attrition_dept_plot)
 
+
+# Avg Salary by JobRole
+ggplot(data, aes(x =MonthlyIncome , y = JobRole,fill=JobRole)) +
+  geom_bar(stat = "summary", fun = "mean") +
+  labs(title = "Average Monthly Income by Job Role",
+       x = "Job Role",
+       y = "Average Monthly Income")
+
+
 ##### Convert String to Numerical
 # experience
 data <- data %>% mutate(experience = ifelse(experience == ">20", 20, experience))
