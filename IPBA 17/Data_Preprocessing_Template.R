@@ -20,6 +20,23 @@ attrition_plot <- ggplot(data, aes(x = factor(Attrition))) + geom_bar() +
 print(attrition_plot)
 
 
+# Attrition By Department
+# Stage 1 - Calculate the percentage of attrition by department
+attrition_percentage <- data %>%
+  group_by(Department) %>%
+  summarize(AttritionRate = mean(Attrition) * 100)
+
+# Stage 2 Plotting
+attrition_dept_plot <- ggplot(attrition_percentage, aes(x = Department, y = AttritionRate, fill = Department)) +
+  geom_bar(stat = "identity") +
+  labs(title = "Percentage Attrition by Department",
+       x = "Department",
+       y = "Attrition Rate (%)") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+# Display the plot
+print(attrition_dept_plot)
+
 ##### Convert String to Numerical
 # experience
 data <- data %>% mutate(experience = ifelse(experience == ">20", 20, experience))
