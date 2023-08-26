@@ -6,13 +6,18 @@ library(reshape2)
 
 
 ##### Import & Clean
-setwd("D:\\GitHub\\R_Basics\\IPBA 13\\Data_Preprocessing_Sanity")
+setwd("C:\\Users\\USER\\Documents\\GitHub_Jigsaw\\R_Basics\\IPBA 17")
 
 #Data Import
 data <- read.csv("Employee_Attrition.csv")
 
-# Empty String
-data <- data %>% mutate(across(where(is.character), ~ na_if(.,"")))
+
+# Attrition Plot
+attrition_plot <- ggplot(data, aes(x = factor(Attrition))) + geom_bar() +
+  labs(title = "Attrition Bar Plot",
+       x = "Attrition",
+       y = "Count")
+print(attrition_plot)
 
 
 ##### Convert String to Numerical
