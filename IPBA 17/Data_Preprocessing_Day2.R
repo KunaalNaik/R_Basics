@@ -5,30 +5,38 @@ library(summarytools)
 library(reshape2)  
 
 #Data Import
-data <- read.csv("https://raw.githubusercontent.com/KunaalNaik/R_Basics/main/IPBA%2017/job_change.csv")
+job_data <- read.csv("https://raw.githubusercontent.com/KunaalNaik/R_Basics/main/IPBA%2017/job_change.csv")
 
 
-##### Categorical
+##### Check Summary Statistics
 
-# Change Plot
-change_plot <- 
-print(change_plot)
 
-# Change By education_level
-# Stage 1 - Calculate the percentage of attrition by department
-job_change_percentage <- data %>%
-  group_by() %>%
-  summarize(AttritionRate = mean() * 100)
+##### Check Missing Values
 
-# Stage 2 Plotting
-change_dept_plot <- 
-
-# Display the plot
-print(change_dept_plot)
 
 
 ##### Numerical
 
-#
+# Treat - training_hours
+
+# Check
+
+
+
+# Treat - city_development_index
+
+# Check
+
+
+
+
+##### Categorical
+
+# Treat - major_discipline
+
+# Bar Plot to Check
+
+
+# Treat - education_level
 
 
